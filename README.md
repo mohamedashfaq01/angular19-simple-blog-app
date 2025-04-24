@@ -1,4 +1,4 @@
-# MediumBlog
+# Created small blog application using the angular 18 features and dummy json api.
 
 The application will:
 1. Fetch posts from DummyJSON  API
