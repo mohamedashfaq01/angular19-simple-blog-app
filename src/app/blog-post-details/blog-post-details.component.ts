@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { Post } from '../models/post.model';
 import { PostService } from '../services/post.service';
@@ -18,6 +18,7 @@ export class BlogPostDetailsComponent {
   post = signal<Post | null>(null);
   loading = signal(false);
   error = signal<string | null>(null);
+  router = inject(Router);
 
   ngOnInit() {
     this.route.paramMap.pipe(
@@ -36,6 +37,10 @@ export class BlogPostDetailsComponent {
         this.loading.set(false);
       }
     });
+  }
+
+  navigateBack() {
+    this.router.navigate(['/']);
   }
 
 }

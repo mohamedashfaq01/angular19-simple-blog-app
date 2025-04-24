@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from '../models/post.model';
+import { Post, PostsResponse } from '../models/post.model';
 import { tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -11,20 +11,22 @@ export class PostService {
   private readonly baseUrl = 'https://dummyjson.com/posts';
 
   // Using signals for state management
+  postsResponse = signal<PostsResponse | null>(null);
   posts = signal<Post[]>([]);
   loading = signal(false);
   error = signal<string | null>(null);
 
-  fetchPosts() {
+  fetchPosts(skip = 0, limit = 10) {
     this.loading.set(true);
     this.error.set(null);
 
-    this.http.get<{posts: Post[]}>(this.baseUrl)
+    this.http.get<PostsResponse>(`${this.baseUrl}?skip=${skip}&limit=${limit}`)
       .pipe(
         tap({
           next: (response) => {
             console.log(response);
             this.posts.set(response.posts);
+            this.postsResponse.set(response); // Store full response
             console.log(this.posts());
             this.loading.set(false);
           },

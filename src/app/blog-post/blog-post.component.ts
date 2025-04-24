@@ -14,6 +14,21 @@ import { TruncatePipe } from '../pipes/truncate.pipe';
 export class BlogPostComponent {
   postService = inject(PostService);
 
+  // post-list.component.ts
+  currentPage = 1;
+  itemsPerPage = 10;
+
+  isLastPage(): boolean {
+    const res = this.postService.postsResponse();
+    return res ? res.skip + res.limit >= res.total : true;
+  }
+
+  loadPage(page: number) {
+    this.currentPage = page;
+    const skip = (page - 1) * this.itemsPerPage;
+    this.postService.fetchPosts(skip, this.itemsPerPage);
+  }
+
   ngOnInit() {
     this.postService.fetchPosts();
   }
