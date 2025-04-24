@@ -28,7 +28,7 @@
       @if (post.tags && post.tags.length > 0) {
       <div class="tags">
         @for (tag of post.tags; track $index) {
-        <span class="tag">{{ tag }}</span>
+        <span class="tag"> #{{ tag }} </span>
         }
       </div>
       }

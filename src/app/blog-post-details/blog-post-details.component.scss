@@ -1,71 +1,76 @@
 .post-details-card {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 15px;
-    padding: 2.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    
-    .post-header {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 1.5rem;
-      margin-bottom: 2rem;
-  
-      h1 {
-        font-size: 2.2rem;
-        color: #2d3436;
-        margin-bottom: 0.5rem;
-      }
-  
-      .post-meta {
-        display: flex;
-        gap: 1rem;
-        color: #636e72;
-        font-size: 0.9rem;
-      }
-    }
-  
-    .post-body {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #4a4a4a;
-      margin: 2rem 0;
-      white-space: pre-wrap;
-    }
-  
-    .post-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-  
-      .stat-item {
-        background: rgba(241, 243, 245, 0.5);
-        padding: 1rem;
-        border-radius: 8px;
-        text-align: center;
-  
-        .stat-label {
-          display: block;
-          font-size: 0.85rem;
-          color: #6c757d;
-          margin-bottom: 0.25rem;
-        }
-  
-        .stat-value {
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #2d3436;
-        }
-      }
-    }
-  
-    .post-actions {
-      border-top: 2px solid #eee;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
-      .back-button {
-        cursor: pointer;
-        // Add this to your existing styles
-        position: relative;
-        z-index: 1;
+  /* For a modern gradient */
+  .tag {
+    color: #6675e6;
+  }
+
+  .post-header {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.2rem;
+      color: #2d3436;
+      margin-bottom: 0.5rem;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      color: #636e72;
+      font-size: 0.9rem;
+    }
+  }
+
+  .post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin: 2rem 0;
+    white-space: pre-wrap;
+  }
+
+  .post-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+
+    .stat-item {
+      background: rgba(241, 243, 245, 0.5);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+
+      .stat-label {
+        display: block;
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-bottom: 0.25rem;
+      }
+
+      .stat-value {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #2d3436;
       }
     }
   }
+
+  .post-actions {
+    border-top: 2px solid #eee;
+
+    .back-button {
+      cursor: pointer;
+      // Add this to your existing styles
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

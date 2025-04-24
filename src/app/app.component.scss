@@ -1,11 +1,11 @@
 /* Background gradient */
 body {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: rgb(224 253 225 / 90%);
   min-height: 100vh;
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(224 253 225 / 90%) ;
   backdrop-filter: blur(10px);
   border-radius: 15px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
