@@ -1,0 +1,15 @@
+@if (loading()) {
+    <p>Loading post...</p>
+  }
+  
+  @if (error(); as error) {
+    <p class="error">{{ error }}</p>
+  }
+  
+  @if (post(); as post) {
+    <article class="post-details">
+      <h1>{{ post.title }}</h1>
+      <p>{{ post.body }}</p>
+      <a routerLink="/">Back to posts</a>
+    </article>
+  }

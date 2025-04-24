@@ -1,0 +1,17 @@
+@if (postService.loading()) {
+    <p>Loading posts...</p>
+  }
+  
+  @if (postService.error(); as error) {
+    <p class="error">{{ error }}</p>
+  }
+  
+  @for (post of postService.posts(); track post.id) {
+    <article class="post-card">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body | truncate: 100 }}</p>
+      <a [routerLink]="['/post', post.id]">Read more</a>
+    </article>
+  } @empty {
+    <p>No posts available</p>
+  }
